@@ -1,0 +1,23 @@
+<!--creasion de componente sin css ni pruebas--ng g c --skipTests -is -->
+
+<div class="bg-dark border-right p-3" id="sidebar">
+    <h3 class="text-light">
+        gifs-app
+    </h3>
+    <hr class="text-white"/>
+    <!-- list-group hace que ponga todo adentro del div en una lista
+         list-reset hace q aldar click no se quede seleccionado-->
+    <div class="list-group list-reset">
+        <!--estilos en botones
+            list-group-item da el color balnco de fondo 
+            list-group-item-action da el evento click da sombra-->
+        <a
+        *ngFor="let item of historial"
+        (click)="buscar(item)" 
+        href="#" 
+        class="list-group-item list-group-item-action">
+        <!--| titlecase pays que es para que muestre los elemetos mayus y min ya que se guardan en minusculas-->
+           {{item | titlecase}}
+        </a>
+    </div>
+</div>
